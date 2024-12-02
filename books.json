@@ -1,0 +1,87 @@
+[
+    {
+        "title": "Человек недостойный",
+        "author": "Осаму Дадзай",
+        "image": "images/bk1.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Исповедь Маски",
+        "author": "Юкио Мисима",
+        "image": "images/bk2.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Братья Карамазовы",
+        "author": "Федор Достоевский",
+        "image": "images/bk3.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Железное пламя",
+        "author": "Ребекка Яррос",
+        "image": "images/bk4.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Тысячеликий герой",
+        "author": "Джозеф Кемпбелл",
+        "image": "images/bk5.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Атлант расправил плечи",
+        "author": "Айн Рэнд",
+        "image": "images/bk6.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Дом, в котором...",
+        "author": "Мариам Петросян",
+        "image": "images/bk7.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Ганнибал",
+        "author": "Томас Харрис",
+        "image": "images/bk8.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Вино из одуванчиков",
+        "author": "Рэй Бредбери",
+        "image": "images/bk9.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Десять негритят",
+        "author": "Агата Кристи",
+        "image": "images/bk10.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Эмма",
+        "author": "Джейн Остен",
+        "image": "images/bk11.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Мартин Иден",
+        "author": "Джек Лондон",
+        "image": "images/bk12.jpg",
+        "description": "Description of Book 2"
+    },
+    {
+        "title": "Охота на овец",
+        "author": "Харуки Мураками",
+        "image": "images/bk13.jpg",
+        "description": "Description of Book 1"
+    },
+    {
+        "title": "Мастер и Маргарита",
+        "author": "Михаил Булгаков",
+        "image": "images/bk14.jpg",
+        "description": "Description of Book 2"
+    }
+   
+]

@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Oswald, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #407088; 
+}
+
+header {
+    background-color: #ffb5b5;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #407088; 
+    text-decoration: none;
+}
+
+.footer {
+   background-color:#303841; 
+   color:#ffffff; 
+   text-align:center; 
+   padding:10px 0; 
+   position:absolute; 
+   bottom:0; 
+   width:100%; 
+}
+
+.section-title {
+    text-align: center; 
+    font-size: 3em; 
+    margin-bottom: 30px; 
+    color: #303841; 
+}
+
+h2 {
+    text-align: center; 
+    font-size: 3em;
+}
+
+.section-title {
+    text-align: center; 
+    font-size: 3em; 
+    margin-bottom: 30px;
+    color: #303841; 
+}
+
+.auth-form {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px; 
+}
+
+.auth-form input,
+.auth-form textarea {
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.1em; 
+}
+
+.auth-form textarea {
+    height: 150px; 
+}
+
+.auth-form button {
+    background-color:  #00adb5; 
+    color: white;
+    padding: 15px 25px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; 
+}
+
+.auth-form button:hover {
+    background-color: #00acb5c1;; 
+}
+.hidden {
+    display: none;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.profile-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px; 
+    text-align: center; 
+}
+
+h2 {
+    color: #333;
+}
+
+.profile-container img {
+    margin-bottom: 20px; 
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="password"],
+.profile-container input[type="file"],
+.profile-container button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.profile-container button {
+    background-color: #5cb85c; 
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-container button:hover {
+    background-color: #4cae4c; 
+}
+
+#logoutButton {
+    background-color: #d9534f; 
+}
+
+#logoutButton:hover {
+    background-color: #c9302c; 
+}
+
+.book-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(25% - 20px); 
+    padding: 15px;
+    text-align: center;
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.book-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.book-author {
+    font-size: 1.2em;
+    color: gray;
+}
+
+.book-description {
+    font-size: 1em;
+}
+
+.favorites-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: flex-start; 
+}
+
+.favorite-card {
+    background-color: #f9f9f9; 
+    border-radius: 15px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 10px; 
+    width: 100px; 
+    text-align: center;
+    transition: transform 0.2s; 
+}
+
+.favorite-card:hover {
+    transform: scale(1.05); 
+}
+
+.book-image {
+    width: 80%; 
+    height: auto;
+    border-radius: 10px; 
+}

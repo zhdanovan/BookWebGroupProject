@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">
+                    <img src="logo.svg"  class="logo-img"> 
+                    BookLib</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#bestsellers">Бестселлеры</a></li>
+                    <li><a href="books.html">Каталог</a></li>
+					<li><a href="forum.html">Форум</a></li>
+					<li><a href="about.html">О нас</a></li>
+                    <li><a href="auth.html">Личный кабинет</a></li>
+         
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h2>Вход</h2>
+            <form id="loginForm" class="auth-form">
+                <input type="text" id="loginUsername" placeholder="Логин" required />
+                <input type="password" id="loginPassword" placeholder="Пароль" required />
+                <button type="submit">Войти</button>
+                <p>Нет аккаунта? <button type="button" id="showRegister">Создать аккаунт</button></p>
+            </form>
+
+            <form id="registerForm" class="auth-form hidden">
+                <h2>Регистрация</h2>
+                <input type="text" id="registerUsername" placeholder="Ваш логин" required />
+                <input type="password" id="registerPassword" placeholder="Ваш пароль" required />
+                <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль" required />
+                <input type="text" id="registerName" placeholder="Имя пользователя" required />
+                <button type="submit">Зарегистрироваться</button>
+                <p>Уже есть аккаунт? <button type="button" id="showLogin">Войти</button></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+
+document.getElementById('showRegister').addEventListener('click', function() {
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registerForm').classList.remove('hidden');
+});
+
+document.getElementById('showLogin').addEventListener('click', function() {
+    document.getElementById('registerForm').classList.add('hidden');
+    document.getElementById('loginForm').classList.remove('hidden');
+});
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const userData = JSON.parse(localStorage.getItem(username));
+
+    if (userData && userData.password === password) {
+        localStorage.setItem('currentUser', username);
+        window.location.href = 'profile.html'; 
+    } else {
+        alert("Неверный логин или пароль.");
+    }
+});
+
+
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('registerUsername').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('registerConfirmPassword').value;
+    
+    if (password !== confirmPassword) {
+        alert("Пароли не совпадают.");
+        return;
+    }
+
+    if (localStorage.getItem(username)) {
+        alert("Пользователь с таким логином уже существует.");
+        return;
+    }
+
+    const name = document.getElementById('registerName').value;
+
+    const newUser = {
+        name: name,
+        password: password,
+        favorites: [] 
+    };
+
+    localStorage.setItem(username, JSON.stringify(newUser));
+    
+    alert("Регистрация прошла успешно! Теперь вы можете войти в систему.");
+    
+
+    document.getElementById('registerForm').classList.add('hidden');
+});
+</script>
+
+</body>
+</html>
