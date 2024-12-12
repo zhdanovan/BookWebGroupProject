@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #dfcdc3; 
+  
 }
 
 header {
@@ -32,16 +33,6 @@ header {
 .nav-links a {
     color: #000000;
     text-decoration: none;
-}
-
-.footer {
-   background-color:#303841; 
-   color:#ffffff; 
-   text-align:center; 
-   padding:10px 0; 
-   position:absolute; 
-   bottom:0; 
-   width:100%; 
 }
 
 .section-title {
@@ -87,7 +78,7 @@ h2 {
 }
 
 .auth-form button {
-    background-color:  #00adb5; 
+    background-color: #719192;
     color: white;
     padding: 15px 25px; 
     border: none;
@@ -97,7 +88,7 @@ h2 {
 }
 
 .auth-form button:hover {
-    background-color: #00acb5c1;; 
+    background-color: #1f2d2ec1;; 
 }
 .hidden {
     display: none;
@@ -218,9 +209,6 @@ h2 {
     height: auto;
     border-radius: 10px; 
 }
-
-
-
 
 .navbar {
     position: relative; 
@@ -459,4 +447,10 @@ h2 {
 
 .bs-card:hover {
     transform: scale(1.05); 
+}
+
+.auth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }

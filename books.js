@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="book-author">${book.author}</p>
                     <p class="book-description">${book.description}</p>
                     <button onclick='addToFavorites(${JSON.stringify(book)})'>Добавить в избранное</button>
+    <img width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-add-a-rating-star-to-give-feedback-online-votes-color-tal-revivo.png" alt="Иконка звездочки"/>
                 `;
                 bookCardsContainer.appendChild(card);
             });
