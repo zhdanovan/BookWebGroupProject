@@ -9,93 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Kelly+Slab&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <style>
-  .favorites-container {
-         display: flex;
-        flex-wrap: wrap; 
-        gap: 15px; 
-        justify-content: flex-start; 
-    }
-        .profile-section {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 600px;
-            height: 600px;
-            margin: auto;
-            margin-top: 80px;
-        }
+  book-image {
+    width: 100%; 
+    height: auto; 
+    max-height: 150px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
 
-        h2 {
-            font-size: 24px; 
-            color: #333;
-        }
+.book-title {
+    font-size: 14px;
+}
 
-        h3 {
-            font-size: 20px; 
-            color: #555;
-            margin-top: 20px;
-        }
+.book-author {
+    font-size: 12px; 
+}
 
-        .favorites-container {
-            display: flex;
-            flex-wrap: wrap; 
-            gap: 15px; 
-            justify-content: flex-start; 
-            margin-top: 10px; 
-        }
+.book-title {
+    font-size: 14px; 
+}
 
-        .favorite-card {
-            background-color: #f9f9f9; 
-            border-radius: 15px; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-            padding: 10px; 
-            width: 120px; 
-            text-align: center; 
-            transition: transform 0.2s; 
-        }
-
-        .favorite-card:hover {
-            transform: scale(1.05); 
-        }
-
-        .book-image {
-            width: 100%; 
-            height: auto; 
-            border-radius: 10px; 
-        }
-
-        .book-title {
-            font-size: 14px; 
-            margin: 5px 0;
-            overflow: hidden; 
-            text-overflow: ellipsis; 
-            white-space: nowrap; 
-        }
-
-        .book-author {
-            font-size: 12px;
-            color: #666; 
-        }
-
-        button {
-            background-color: #007bff; 
-            color: white; 
-            border: none;
-            border-radius: 5px; 
-            padding: 10px 15px; 
-            cursor: pointer;
-            transition: background-color 0.3s; 
-        }
-
-        button:hover {
-            background-color: #0056b3; 
-        }
-
-        #logoutButton {
-            margin-top: 20px; 
-        }
-	
+.book-author {
+    font-size: 12px; 
+}
 </style>
 <body>
     <header>
