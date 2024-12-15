@@ -6,42 +6,113 @@
     <title>BookLib</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
                 <h1 class="logo">
-                    <img src="logo.svg" class="logo-img"> 
                     BookLib</h1>
                 <ul class="nav-links">
                     <li><a href="index.html">Главная</a></li>
-                    <li><a href="#bestsellers">Бестселлеры</a></li>
                     <li><a href="books.html">Каталог</a></li>
-					<li><a href=".html">Список постов</a></li>
-					<li><a href=".html">Создать пост</a></li>
+                    <li><a href="#posts" id="createPostBtn">Создать пост</a></li>
                     <li><a href="profile.html">Личный кабинет</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-            <section class="news">
-                <h2>Обсуждение</h2>
-                <div class="news-container">
-                    <article class="news-item">
-                    </article>
-                    <article class="news-item">
-                    </article>
-                    <article class="news-item">
-                    </article>
-                    <article class="news-item">
-                    </article>
+        <section class="posts">
+            <h2>Обсуждение</h2>
+            <div class="posts-container" id="postsContainer">
+            </div>
+            <div id="postModal" class="modal-post hidden">
+                <div class="modal-content-post">
+                    <span id="closeModal" class="close">&times;</span>
+                    <h2>Создать пост</h2>
+                    <form id="postForm">
+                        <input type="text" id="postTitle" placeholder="Заголовок поста" required />
+                        <textarea id="postContent" placeholder="Содержимое поста" required></textarea>
+                        <button type="submit">Опубликовать</button>
+                    </form>
                 </div>
-            </section>
+            </div>
+
+        </section>
     </main>
+
     <script src="script.js"></script>
-</body>
-</html>
+
+    <script>
+        const currentUser = localStorage.getItem('currentUser');
+
+        function displayPosts() {
+            const postsContainer = document.getElementById('postsContainer');
+            postsContainer.innerHTML = ''; 
+
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+            posts.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'posts-item';
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <p class="author">Автор: ${post.author}</p>`; 
+                
+                postsContainer.appendChild(postElement);
+            });
+        }
+
+        displayPosts();
+
+        if (!currentUser) {
+            document.getElementById('createPostBtn').addEventListener('click', function() {
+                alert("Пожалуйста, войдите в систему для создания постов.");
+                return;
+            });
+        } else {
+            document.getElementById('createPostBtn').addEventListener('click', function() {
+                document.getElementById('postModal').classList.remove('hidden');
+            });
+
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.getElementById('postModal').classList.add('hidden');
+            });
+
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('postModal');
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('postForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const title = document.getElementById('postTitle').value;
+                const content = document.getElementById('postContent').value;
+
+                const newPost = { 
+                    title, 
+                    content,
+                    author: currentUser
+                };
+
+                const posts = JSON.parse(localStorage.getItem('posts')) || [];
+                posts.push(newPost);
+                localStorage.setItem('posts', JSON.stringify(posts));
+
+                displayPosts(); 
+                document.getElementById('postForm').reset();
+                document.getElementById('postModal').classList.add('hidden');
+                alert("Пост успешно опубликован!");
+            });
+        }
+    </script>
+
+</body
