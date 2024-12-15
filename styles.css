@@ -738,3 +738,25 @@ button:hover {
 .hidden {
     display: none; 
 }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%) rotate(360deg); 
+    font-size: 78px; 
+    color:  #719192;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.left-arrow {
+    left: 180px; 
+}
+
+.right-arrow {
+    right: 180px; 
+}
+
+.arrow:hover {
+    transform: translateY(-50%) rotate(180deg) scale(1.2); 
+}
